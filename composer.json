@@ -1,0 +1,24 @@
+{
+  "name": "zanphp/http-view",
+  "require": {
+    "php": ">=5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Zan\\Framework\\Foundation\\View\\": "src/"
+    },
+    "files": [
+      "src/Pagination/Paginator.php"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "secure-http": false
+  },
+  "minimum-stability": "dev"
+}
