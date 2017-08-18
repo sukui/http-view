@@ -1,6 +1,6 @@
 <?php
 
-namespace ZanPHP\HttpView\Plugin;
+namespace Zan\Framework\Foundation\View\Plugin;
 
 
 class KeyHash {
