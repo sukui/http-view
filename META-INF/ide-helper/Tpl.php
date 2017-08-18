@@ -1,12 +1,12 @@
 <?php
 
-namespace ZanPHP\HttpView;
+namespace Zan\Framework\Foundation\View;
 
-use InvalidArgumentException;
-use ZanPHP\Contracts\Config\Repository;
-use ZanPHP\Contracts\Foundation\Application;
-use ZanPHP\Coroutine\Event;
-use ZanPHP\Support\Dir;
+use Zan\Framework\Foundation\Application;
+use Zan\Framework\Foundation\Exception\System\InvalidArgumentException;
+use Zan\Framework\Utilities\Types\Dir;
+use Zan\Framework\Foundation\Coroutine\Event;
+use Zan\Framework\Foundation\Core\Config;
 
 class Tpl
 {
@@ -19,9 +19,7 @@ class Tpl
     {
         $that = $this;
         $this->_event = $event;
-        /** @var Application $application */
-        $application = make(Application::class);
-        $this->_rootPath = $application->getBasePath();
+        $this->_rootPath = Application::getInstance()->getBasePath();
         $this->_event->bind('set_view_vars', function($args) use ($that) {
             $this->setViewVars($args);
         });
@@ -57,8 +55,7 @@ class Tpl
         $pathArr = array_map([$this, '_pathUcfirst'], $pathArr);
         $module = array_shift($pathArr);
         $srcPath = $this->_rootPath . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR;
-        $repository = make(Repository::class);
-        $customViewConfig = $repository->get('custom_view_config') ? $repository->get('custom_view_config') . DIRECTORY_SEPARATOR : '';
+        $customViewConfig = Config::get('custom_view_config') ? Config::get('custom_view_config') . DIRECTORY_SEPARATOR : '';
         $fullPath = $srcPath . $customViewConfig .
                 $module . DIRECTORY_SEPARATOR .
                 'View' . DIRECTORY_SEPARATOR .

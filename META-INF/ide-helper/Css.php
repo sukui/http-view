@@ -1,10 +1,10 @@
 <?php
 
-namespace ZanPHP\HttpView;
+namespace Zan\Framework\Foundation\View;
 
+use Zan\Framework\Foundation\Core\Config;
+use Zan\Framework\Utilities\Types\Time;
 use Zan\Framework\Utilities\Types\URL;
-use ZanPHP\Contracts\Config\Repository;
-use ZanPHP\Support\Time;
 
 class Css extends BaseLoader
 {
@@ -16,8 +16,7 @@ class Css extends BaseLoader
 
     public function getCssURL($index, $vendor = false)
     {
-        $repository = make(Repository::class);
-        $isUseCdn = $repository->get('js.use_css_cdn');
+        $isUseCdn = Config::get('js.use_css_cdn');
         $url = '';
         if ($vendor !== false) {
             $url = URL::site($index, $isUseCdn ? $this->getCdnType() : 'static');
@@ -25,7 +24,7 @@ class Css extends BaseLoader
             $arr = explode('.', $index, 2);
 
             if ($isUseCdn) {
-                $url = URL::site($repository->get($index), $this->getCdnType());
+                $url = URL::site(Config::get($index), $this->getCdnType());
             } else {
                 $url = URL::site('local_css/' . $arr[1] . '.css?t=' . Time::current(TRUE), 'static');
             }

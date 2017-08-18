@@ -1,6 +1,6 @@
 <?php
 
-namespace ZanPHP\HttpView;
+namespace Zan\Framework\Foundation\View;
 
 
 class JsVar

@@ -1,8 +1,8 @@
 <?php
 
-namespace ZanPHP\HttpView\Pagelet\Component;
+namespace Zan\Framework\Foundation\Pagelet\Component;
 
-use ZanPHP\Contracts\Pagelet\ComponentInterface;
+use Zan\Framework\Foundation\Pagelet\Contracts\ComponentInterface;
 
 abstract class ComponentAbstract implements ComponentInterface
 {
@@ -13,12 +13,12 @@ abstract class ComponentAbstract implements ComponentInterface
 
     /**
      * @param $extraData
-     * @return ComponentInterface;
+     * @return Zan\Framework\Foundation\Pagelet\Contracts\ComponentInterface;
      */
     abstract public function view(array $extraData);
 
     /**
-     * @return ComponentInterface;
+     * @return Zan\Framework\Foundation\Pagelet\Contracts\ComponentInterface;
      */
     abstract public function edit();
 

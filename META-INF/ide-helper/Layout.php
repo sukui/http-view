@@ -1,9 +1,10 @@
 <?php
+namespace Zan\Framework\Foundation\View;
 
-namespace ZanPHP\HttpView;
+use Zan\Framework\Foundation\Exception\System\InvalidArgumentException;
 
-use InvalidArgumentException;
-use ZanPHP\Coroutine\Event;
+use Zan\Framework\Foundation\View\Tpl;
+use Zan\Framework\Foundation\Coroutine\Event;
 
 class Layout
 {
