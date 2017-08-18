@@ -1,6 +1,7 @@
 <?php
 
-namespace ZanPHP\HttpView\Compressor;
+namespace Zan\Framework\Foundation\View\Compressor;
+
 
 class Css
 {

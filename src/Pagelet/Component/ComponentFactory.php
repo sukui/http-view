@@ -1,8 +1,9 @@
 <?php
 
-namespace ZanPHP\HttpView\Pagelet\Component;
+namespace Zan\Framework\Foundation\Pagelet\Component;
 
-use InvalidArgumentException;
+use Zan\Framework\Foundation\Pagelet\Component\ComponentAbstract;
+use Zan\Framework\Foundation\Exception\System\InvalidArgumentException;
 
 class ComponentFactory
 {
@@ -39,11 +40,11 @@ class ComponentFactory
     {
         $componentObjName = $this->_getComponentObjName($componentGroup, $componentType);
         if(!class_exists($componentObjName)) {
-            throw new InvalidArgumentException("group:{$componentGroup} type:{$componentType} view component class not existed", 50000);
+            throw new InvalidArgumentException(50000, "group:{$componentGroup} type:{$componentType} view component class not existed");
         }
         $componentObj = new $componentObjName($componentKey);
         if(!$componentObj instanceof ComponentAbstract) {
-            throw new InvalidArgumentException("group:{$componentGroup} type:{$componentType} view component not instanceof ComponentAbstract", 50000);
+            throw new InvalidArgumentException(50000, "group:{$componentGroup} type:{$componentType} view component not instanceof ComponentAbstract");
         }
         return $componentObj;
     }
