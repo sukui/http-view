@@ -1,11 +1,14 @@
 {
   "name": "zanphp/http-view",
   "require": {
-    "php": ">=5.6"
+    "php": ">=5.6",
+    "zanphp/contracts": "dev-master",
+    "zanphp/coroutine": "dev-master",
+    "zanphp/support": "dev-master"
   },
   "autoload": {
     "psr-4": {
-      "Zan\\Framework\\Foundation\\View\\": "src/"
+      "ZanPHP\\HTTPView\\": "src/"
     },
     "files": [
       "src/Pagination/Paginator.php"

@@ -1,9 +1,8 @@
 <?php
+namespace Zan\Framework\Utilities\Pagination;
 
-namespace ZanPHP\HttpView\Pagination;
-
-use InvalidArgumentException;
-use ZanPHP\HttpView\View;
+use Zan\Framework\Foundation\Exception\System\InvalidArgumentException;
+use Zan\Framework\Foundation\View\View;
 
 class Paginator
 {

@@ -1,9 +1,10 @@
 <?php
 
-namespace ZanPHP\HttpView;
+namespace Zan\Framework\Foundation\View;
 
+use Zan\Framework\Foundation\Core\Config;
+use Zan\Framework\Foundation\View\BaseLoader;
 use Zan\Framework\Utilities\Types\URL;
-use ZanPHP\Contracts\Config\Repository;
 
 class Js extends BaseLoader
 {
@@ -31,15 +32,14 @@ class Js extends BaseLoader
 
     public function getJsUrl($index, $vendor = false)
     {
-        $repository = make(Repository::class);
-        $isUseCdn = $repository->get('js.use_js_cdn');
+        $isUseCdn = Config::get('js.use_js_cdn');
         $url = $project = '';
         if ($vendor !== false) {
             $url = URL::site($index, $isUseCdn ? $this->getCdnType() : 'static');
         } else {
             $arr = explode('.', $index, 2);
             if ($isUseCdn) {
-                $url = URL::site($repository->get($index), $this->getCdnType());
+                $url = URL::site(Config::get($index), $this->getCdnType());
             } else {
                 $project = substr($arr[0], 8);
                 $url = URL::site($project . '/' . $arr[1] . '/main.js', 'static');

@@ -1,9 +1,8 @@
 <?php
 
-namespace ZanPHP\HttpView;
+namespace Zan\Framework\Foundation\View;
 
-use ZanPHP\Contracts\Config\Repository;
-use ZanPHP\Coroutine\Event;
+use Zan\Framework\Foundation\Coroutine\Event;
 
 class BaseLoader
 {
@@ -41,8 +40,7 @@ class BaseLoader
 
     public function getCdnType()
     {
-        $repository = make(Repository::class);
-        $cdnMap = $repository->get('cdn_whitelist');
+        $cdnMap = Config::get('cdn_whitelist');
         $pageKey = (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '') . $this->query_path;
         if (isset($cdnMap[$pageKey])) {
             return 'new_cdn_static';

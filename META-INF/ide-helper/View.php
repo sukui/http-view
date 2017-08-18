@@ -1,8 +1,11 @@
 <?php
+namespace Zan\Framework\Foundation\View;
 
-namespace ZanPHP\HttpView;
-
-use ZanPHP\Coroutine\Event;
+use Zan\Framework\Foundation\View\Layout;
+use Zan\Framework\Foundation\View\Tpl;
+use Zan\Framework\Foundation\View\Js;
+use Zan\Framework\Foundation\View\Css;
+use Zan\Framework\Foundation\Coroutine\Event;
 
 class View
 {

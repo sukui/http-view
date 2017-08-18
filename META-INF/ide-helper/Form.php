@@ -1,8 +1,8 @@
 <?php
 
-namespace ZanPHP\HttpView;
+namespace Zan\Framework\Foundation\View;
 
-use ZanPHP\HttpView\Plugin\KeyHash;
+use Zan\Framework\Foundation\View\Plugin\KeyHash;
 
 class Form
 {
