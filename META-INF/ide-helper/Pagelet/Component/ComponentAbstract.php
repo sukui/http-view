@@ -2,7 +2,7 @@
 
 namespace Zan\Framework\Foundation\Pagelet\Component;
 
-use Zan\Framework\Foundation\Pagelet\Contracts\ComponentInterface;
+use ZanPHP\Contracts\Pagelet\ComponentInterface;
 
 abstract class ComponentAbstract implements ComponentInterface
 {
@@ -13,12 +13,12 @@ abstract class ComponentAbstract implements ComponentInterface
 
     /**
      * @param $extraData
-     * @return Zan\Framework\Foundation\Pagelet\Contracts\ComponentInterface;
+     * @return ComponentInterface;
      */
     abstract public function view(array $extraData);
 
     /**
-     * @return Zan\Framework\Foundation\Pagelet\Contracts\ComponentInterface;
+     * @return ComponentInterface;
      */
     abstract public function edit();
 
@@ -33,5 +33,4 @@ abstract class ComponentAbstract implements ComponentInterface
      */
     abstract public function getType();
 }
-
 

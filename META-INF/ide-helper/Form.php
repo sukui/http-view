@@ -2,7 +2,7 @@
 
 namespace Zan\Framework\Foundation\View;
 
-use Zan\Framework\Foundation\View\Plugin\KeyHash;
+use ZanPHP\HttpView\Plugin\KeyHash;
 
 class Form
 {
