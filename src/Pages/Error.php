@@ -7,8 +7,8 @@ return <<<EOT
 <!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="有赞,微信商城,粉丝营销,微信商城运营" />
-    <meta name="description" content="有赞是帮助商家在微信上搭建微信商城的平台，提供店铺、商品、订单、物流、消息和客户的管理模块，同时还提供丰富的营销应用和活动插件。" />
+    <meta name="keywords" content="速线科技" />
+    <meta name="description" content="速线框架" />
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -17,7 +17,7 @@ return <<<EOT
 
     <link rel="icon" href="https://su.yzcdn.cn/v2/image/yz_fc.ico" />
 
-    <title>出错了，请稍后再试！- 有赞</title>
+    <title>出错了，请稍后再试！- 速线</title>
 
     <!-- ▼Page CSS -->
     <style>
